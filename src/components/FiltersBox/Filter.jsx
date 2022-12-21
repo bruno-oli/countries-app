@@ -1,9 +1,8 @@
-import React from "react";
+import React, { useContext } from "react";
 import styled from "styled-components";
+import { CountriesContext } from "../../contexts/CountriesContext";
 
 import BoxShadow from "../../global/BoxShadow";
-
-import { AiOutlineDown } from "react-icons/ai";
 
 const Wrapper = styled.select`
   width: 12rem;
@@ -15,17 +14,16 @@ const Wrapper = styled.select`
   color: ${(props) => props.theme.colors.input};
   font-weight: 600;
   appearance: none;
+  border-radius: 0.2rem;
 `;
 
 const Filter = () => {
   return (
     <Wrapper>
-      <option value="" selected>
-        Filter by Region
-      </option>
-      <option value="africa">Africa</option>
-      <option value="ametica">America</option>
-      <option value="asia">Asia</option>
+      <option defaultValue={""}>Filter by Region</option>
+      <option value="Africa">Africa</option>
+      <option value="America">America</option>
+      <option value="Asia">Asia</option>
       <option value="Europe">Europe</option>
       <option value="Oceania">Oceania</option>
     </Wrapper>

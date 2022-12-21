@@ -4,11 +4,11 @@ import styled from "styled-components";
 //Icones
 import { BsMoonFill, BsFillSunFill } from "react-icons/bs";
 
-import { ThemeAppContext } from "../../contexts/ThemeAppProvider";
 import BoxShadow from "../../global/BoxShadow"
+import { ThemeAppContext } from "../../contexts/ThemeAppContext";
 
 const Wrapper = styled.header`
-  width: 100vw;
+  max-width: 100vw;
   height: 5rem;
   background-color: ${(props) => props.theme.colors.element};
   display: flex;

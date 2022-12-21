@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { ThemeProvider } from "styled-components";
 
@@ -10,7 +10,8 @@ import Home from "./views/Home/Home";
 import GlobalStyle from "./global/GlobalStyle";
 import lightTheme from "./themes/lightTheme";
 import darkTheme from "./themes/darkTheme";
-import { ThemeAppContext } from "./contexts/ThemeAppProvider";
+import { ThemeAppContext } from "./contexts/ThemeAppContext";
+
 
 function App() {
   const { darkThemeState } = useContext(ThemeAppContext);
