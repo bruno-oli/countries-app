@@ -9,7 +9,8 @@ const GlobalStyle = createGlobalStyle`
     transition: background .2s;
   } body {
     background-color: ${props => props.theme.colors.background};
-    
+  } a {
+    text-decoration: none;
   }
 `
 

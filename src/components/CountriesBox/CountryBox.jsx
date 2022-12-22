@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 import BoxShadow from "../../global/BoxShadow";
@@ -11,7 +12,7 @@ const Wrapper = styled.div`
   display: flex;
   color: ${(props) => props.theme.colors.text};
   flex-direction: column;
-  border-radius: .2rem;
+  border-radius: 0.2rem;
   overflow: hidden;
   .image__box {
     width: 100%;
@@ -37,23 +38,25 @@ const Wrapper = styled.div`
 const CountryBox = ({ data }) => {
   const formatNumber = new Intl.NumberFormat("en-US");
   return (
-    <Wrapper>
-      <div className="image__box">
-        <img src={data.flags.png} alt="" />
-      </div>
-      <div className="details">
-        <h1>{data.name.common}</h1>
-        <span>
-          <strong>Population:</strong> {formatNumber.format(data.population)}
-        </span>
-        <span>
-          <strong>Region:</strong> {data.region}
-        </span>
-        <span>
-          <strong>Capital:</strong> {data.capital}
-        </span>
-      </div>
-    </Wrapper>
+    <Link to={`country/${data.cca2}`}>
+      <Wrapper>
+        <div className="image__box">
+          <img src={data.flags.png} alt="" />
+        </div>
+        <div className="details">
+          <h1>{data.name.common}</h1>
+          <span>
+            <strong>Population:</strong> {formatNumber.format(data.population)}
+          </span>
+          <span>
+            <strong>Region:</strong> {data.region}
+          </span>
+          <span>
+            <strong>Capital:</strong> {data.capital}
+          </span>
+        </div>
+      </Wrapper>
+    </Link>
   );
 };
 

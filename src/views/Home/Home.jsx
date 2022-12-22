@@ -7,6 +7,9 @@ import CountriesProvider from "../../contexts/CountriesContext";
 
 const Wrapper = styled.main`
   padding: 2rem 4rem;
+  @media only screen and (max-width: 480px) {
+    padding: 0;
+  }
 `;
 
 const Home = () => {

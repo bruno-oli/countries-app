@@ -11,7 +11,7 @@ import GlobalStyle from "./global/GlobalStyle";
 import lightTheme from "./themes/lightTheme";
 import darkTheme from "./themes/darkTheme";
 import { ThemeAppContext } from "./contexts/ThemeAppContext";
-
+import Country from "./views/Country/Country";
 
 function App() {
   const { darkThemeState } = useContext(ThemeAppContext);
@@ -22,6 +22,7 @@ function App() {
         <Header />
         <Routes>
           <Route path="/countries-app/" element={<Home />} />
+          <Route path="/countries-app/country/:id" element={<Country />} />
         </Routes>
       </ThemeProvider>
     </BrowserRouter>

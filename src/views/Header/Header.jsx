@@ -6,6 +6,7 @@ import { BsMoonFill, BsFillSunFill } from "react-icons/bs";
 
 import BoxShadow from "../../global/BoxShadow"
 import { ThemeAppContext } from "../../contexts/ThemeAppContext";
+import { Link } from "react-router-dom";
 
 const Wrapper = styled.header`
   max-width: 100vw;
@@ -19,6 +20,12 @@ const Wrapper = styled.header`
   h1 {
     font-size: 1.5em;
     color: ${(props) => props.theme.colors.text};
+  }
+  @media only screen and (max-width: 480px) {
+    padding: 0 1rem;
+    h1 {
+      font-size: 1em;
+    }
   }
 `;
 
@@ -47,7 +54,9 @@ const Header = () => {
   }
   return (
     <Wrapper>
-      <h1>Where in the world?</h1>
+      <Link to={'/countries-app/'}>
+        <h1>Where in the world?</h1>
+      </Link>
       <Button onClick={toggleTheme}>
         {darkThemeState ? (
           <span>

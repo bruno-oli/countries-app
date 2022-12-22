@@ -30,12 +30,16 @@ const Wrapper = styled.div`
     color: ${(props) => props.theme.colors.input};
     font-size: 1.5rem;
   }
+  @media only screen and (max-width: 480px) {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
 `;
 
 const Input = () => {
   const { search, setSearch } = useContext(CountriesContext);
   return (
-    <Wrapper>
+    <Wrapper >
       <AiOutlineSearch />
       <input
         placeholder="Search for a country..."
